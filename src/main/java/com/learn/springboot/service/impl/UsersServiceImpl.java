@@ -28,8 +28,6 @@ public class UsersServiceImpl implements IuserService {
     public int saveUserInfo(UserInfoVO userInfoVO) {
 
 
-
-
         UserEntity userEntity = new UserEntity();
         BeanCopyUtil.copyProperties(userInfoVO, userEntity);
         return userMapper.saveUserInfo(userEntity);

@@ -26,7 +26,6 @@ public class UsersServiceImpl implements IuserService {
 
     @Override
     public int saveUserInfo(UserInfoVO userInfoVO) {
-uoijfasdlkfj;阿萨德积分撒旦法
 
         UserEntity userEntity = new UserEntity();
         BeanCopyUtil.copyProperties(userInfoVO, userEntity);

@@ -1,5 +1,6 @@
 package com.learn.springboot.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.learn.springboot.api.IuserService;
 import com.learn.springboot.api.vo.UserInfoVO;
 import io.swagger.annotations.Api;
@@ -40,7 +41,9 @@ public class UserController {
 
     @ApiOperation(value = "根据用户名模糊查询用户信息", notes = "用户名模糊查询用户信息")
     @RequestMapping(value = "/queryByIdLikeUsername",method = RequestMethod.GET)
-    public List<UserInfoVO> queryById(@RequestParam @ApiParam(value = "用户名", required = true) String username){
+    public List<UserInfoVO> queryByNmae(@RequestParam @ApiParam(value = "用户名", required = true) String username){
+        //分页查询,注:需要配置类:MyBatisConfiguration
+        PageHelper.startPage(2,3);
        return userService.queryLikeUsername(username);
     }
 

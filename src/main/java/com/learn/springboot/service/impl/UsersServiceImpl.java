@@ -44,10 +44,12 @@ public class UsersServiceImpl implements IuserService {
     public List<UserInfoVO> queryLikeUsername(String username) {
 
         List<UserEntity> userEntityList = userMapper.queryLikeUsername(username);
-        UserInfoVO userInfoVO = new UserInfoVO();
+
         List<UserInfoVO> userInfoList = new ArrayList<>();
         userEntityList.forEach((e)->{
+            UserInfoVO userInfoVO = new UserInfoVO();
             BeanCopyUtil.copyProperties(e,userInfoVO);
+            System.out.println(userInfoVO);
             userInfoList.add(userInfoVO);
         });
         return userInfoList;
